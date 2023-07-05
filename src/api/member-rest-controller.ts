@@ -3,8 +3,8 @@ import cors from 'cors';
 
 export const router = express.Router();
 
-router.use(json());
 router.use(cors());
+router.use(json());
 
 router.post("/", (req, res)=>{
     res.send("<h1>Save member</h1>");
