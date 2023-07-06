@@ -143,7 +143,7 @@ router.get('/:memberId', async (req, res,next) => {
 router.get('/', async (req, res) => {
     let query = req.query.q ?? '';
     res.json(await memberRepo.find({
-        $or:[{_id: {$regex: `${query}`}}, {name: {$regex: `${query}`}},
-            {address: {$regex: `${query}`}}, {contact: {$regex: `${query}`}}]
+        $or:[{_id: {$regex: `/${query}/`}}, {name: {$regex: `/${query}/`}},
+            {address: {$regex: `/${query}/`}}, {contact: {$regex: `/${query}/`}}]
     }).toArray());
 });
